@@ -1,16 +1,22 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-gray-100 py-12 md:py-20 mt-20">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm text-gray-500">
 
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-orange-600 rounded-md flex items-center justify-center text-white font-bold tracking-tighter">
-              KH
-            </div>
-            <span className="font-semibold text-gray-900">
-              Kind Heart Foundation
-            </span>
+          <div className="flex items-center gap-3 mb-4">
+             <Image 
+                src="/kindheartfoundation.jpg" 
+                alt="Kind Heart Foundation Logo" 
+                width={32} 
+                height={32} 
+                className="rounded-md object-cover"
+              />
+              <span className="font-semibold text-gray-900 text-base">
+                Kind Heart Foundation
+              </span>
           </div>
           <p className="max-w-xs leading-relaxed">
             Providing essential services and care to people in need. Building a better, kinder future together.

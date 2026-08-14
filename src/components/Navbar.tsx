@@ -1,14 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/70 border-b border-gray-100 transition-all duration-300">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Placeholder for Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center text-white font-bold tracking-tighter group-hover:bg-orange-700 transition-colors">
-            KH
-          </div>
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3 group">
+          <Image 
+            src="/kindheartfoundation.jpg" 
+            alt="Kind Heart Foundation Logo" 
+            width={40} 
+            height={40} 
+            className="rounded-lg object-cover group-hover:opacity-90 transition-opacity"
+          />
           <span className="font-semibold text-lg tracking-tight text-gray-900">
             Kind Heart Foundation
           </span>
