@@ -76,16 +76,16 @@ export default function Home() {
         <div className="max-w-4xl mx-auto mt-10">
           <h1 className="hero-text text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
             Empowering Lives, <br />
-            <span className="text-gray-400">Inspiring Hope.</span>
+            <span className="text-orange-500">Inspiring Hope.</span>
           </h1>
           <p className="hero-text text-lg md:text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
             The Kind Heart Foundation provides essential services, education, and care to communities in need. Join us in building a better future.
           </p>
           <div className="hero-text flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="px-8 py-4 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all transform hover:-translate-y-1 w-full sm:w-auto">
+            <button className="px-8 py-4 bg-orange-600 text-white rounded-full font-medium hover:bg-orange-700 transition-all transform hover:-translate-y-1 w-full sm:w-auto shadow-lg shadow-orange-600/20">
               Get Involved
             </button>
-            <button className="px-8 py-4 bg-gray-100 text-gray-900 rounded-full font-medium hover:bg-gray-200 transition-all w-full sm:w-auto">
+            <button className="px-8 py-4 bg-orange-50 text-orange-700 rounded-full font-medium hover:bg-orange-100 transition-all w-full sm:w-auto">
               Learn More
             </button>
           </div>
@@ -105,7 +105,7 @@ export default function Home() {
                 We focus on holistic development—providing not just immediate relief, but long-term solutions through education, healthcare, and skill development.
               </p>
             </div>
-            <div className="aspect-square bg-gray-200 rounded-3xl flex items-center justify-center text-gray-400 border border-gray-100 shadow-sm">
+            <div className="aspect-square bg-orange-50 rounded-3xl flex items-center justify-center text-orange-300 border border-orange-100 shadow-sm">
               [ Image Placeholder ]
             </div>
           </div>
@@ -126,8 +126,8 @@ export default function Home() {
               { title: "Healthcare Access", desc: "Organizing medical camps and providing essential healthcare services to communities." },
               { title: "Community Support", desc: "Distributing food, clothing, and providing emergency relief during critical times of crisis." }
             ].map((service, index) => (
-              <div key={index} className="service-card p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:shadow-md transition-all duration-300 group">
-                <div className="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center mb-6 text-xl font-bold group-hover:scale-110 transition-transform">
+              <div key={index} className="service-card p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-lg hover:border-orange-100 transition-all duration-300 group">
+                <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-6 text-xl font-bold group-hover:bg-orange-600 group-hover:text-white transition-colors">
                   {index + 1}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3 tracking-tight">{service.title}</h3>
@@ -140,12 +140,12 @@ export default function Home() {
 
       {/* CTA Section */}
       <section id="contact" ref={ctaRef} className="py-24 px-6">
-        <div className="container mx-auto max-w-4xl text-center cta-content bg-gray-900 rounded-[2.5rem] p-12 md:p-20 text-white shadow-xl">
+        <div className="container mx-auto max-w-4xl text-center cta-content bg-orange-600 rounded-[2.5rem] p-12 md:p-20 text-white shadow-xl shadow-orange-600/20">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Ready to make an impact?</h2>
-          <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-orange-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
             Your support can help us reach more people and change more lives. Every contribution makes a meaningful difference.
           </p>
-          <button className="px-10 py-4 bg-white text-gray-900 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 active:scale-95">
+          <button className="px-10 py-4 bg-white text-orange-600 rounded-full font-semibold text-lg hover:bg-orange-50 transition-all transform hover:scale-105 active:scale-95 shadow-sm">
             Donate Today
           </button>
         </div>
