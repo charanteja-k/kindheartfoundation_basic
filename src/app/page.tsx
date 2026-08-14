@@ -71,9 +71,15 @@ export default function Home() {
       {/* Hero Section */}
       <section 
         ref={heroRef} 
-        className="min-h-[85vh] flex flex-col justify-center items-center text-center px-6 bg-white"
+        className="relative min-h-[85vh] flex flex-col justify-center items-center text-center px-6 bg-white overflow-hidden"
       >
-        <div className="max-w-4xl mx-auto mt-10">
+        {/* Transparent Background Image */}
+        <div 
+          className="absolute inset-0 z-0 opacity-10 bg-center bg-contain bg-no-repeat pointer-events-none" 
+          style={{ backgroundImage: "url('/hero-bg.png')" }}
+        />
+        
+        <div className="relative z-10 max-w-4xl mx-auto mt-10">
           <h1 className="hero-text text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
             Empowering Lives, <br />
             <span className="text-orange-500">Inspiring Hope.</span>
