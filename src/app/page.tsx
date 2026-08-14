@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -111,8 +112,14 @@ export default function Home() {
                 We focus on holistic development—providing not just immediate relief, but long-term solutions through education, healthcare, and skill development.
               </p>
             </div>
-            <div className="aspect-square bg-orange-50 rounded-3xl flex items-center justify-center text-orange-300 border border-orange-100 shadow-sm">
-              [ Image Placeholder ]
+            <div className="aspect-square bg-orange-50 rounded-3xl flex items-center justify-center border border-orange-100 shadow-sm overflow-hidden p-8">
+              <Image 
+                src="/kindheartfoundation.jpg" 
+                alt="Kind Heart Foundation About" 
+                width={500} 
+                height={500} 
+                className="w-full h-full object-contain rounded-xl hover:scale-105 transition-transform duration-500"
+              />
             </div>
           </div>
         </div>
