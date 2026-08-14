@@ -1,0 +1,155 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Home() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Context is great for cleanup in React
+    const ctx = gsap.context(() => {
+      // Hero Text Reveal
+      gsap.from(".hero-text", {
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+        delay: 0.1,
+      });
+
+      // About Section Scroll Animation
+      gsap.from(".about-content", {
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "top 80%",
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+
+      // Services Cards Stagger
+      gsap.from(".service-card", {
+        scrollTrigger: {
+          trigger: servicesRef.current,
+          start: "top 75%",
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out",
+      });
+
+      // CTA Animation
+      gsap.from(".cta-content", {
+        scrollTrigger: {
+          trigger: ctaRef.current,
+          start: "top 85%",
+        },
+        scale: 0.95,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div className="flex flex-col w-full">
+      {/* Hero Section */}
+      <section 
+        ref={heroRef} 
+        className="min-h-[85vh] flex flex-col justify-center items-center text-center px-6 bg-white"
+      >
+        <div className="max-w-4xl mx-auto mt-10">
+          <h1 className="hero-text text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
+            Empowering Lives, <br />
+            <span className="text-gray-400">Inspiring Hope.</span>
+          </h1>
+          <p className="hero-text text-lg md:text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+            The Kind Heart Foundation provides essential services, education, and care to communities in need. Join us in building a better future.
+          </p>
+          <div className="hero-text flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="px-8 py-4 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all transform hover:-translate-y-1 w-full sm:w-auto">
+              Get Involved
+            </button>
+            <button className="px-8 py-4 bg-gray-100 text-gray-900 rounded-full font-medium hover:bg-gray-200 transition-all w-full sm:w-auto">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" ref={aboutRef} className="py-24 bg-gray-50 px-6">
+        <div className="container mx-auto max-w-5xl">
+          <div className="about-content grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-6">About Us</h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                Founded on the belief that every individual deserves a chance at a better life, the Kind Heart Foundation has been working tirelessly to support underprivileged communities.
+              </p>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                We focus on holistic development—providing not just immediate relief, but long-term solutions through education, healthcare, and skill development.
+              </p>
+            </div>
+            <div className="aspect-square bg-gray-200 rounded-3xl flex items-center justify-center text-gray-400 border border-gray-100 shadow-sm">
+              [ Image Placeholder ]
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" ref={servicesRef} className="py-24 bg-white px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-4">Our Services</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-lg">We provide a range of support systems designed to uplift individuals and families.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "Education Programs", desc: "Providing access to quality education and learning materials for children in underserved areas." },
+              { title: "Healthcare Access", desc: "Organizing medical camps and providing essential healthcare services to communities." },
+              { title: "Community Support", desc: "Distributing food, clothing, and providing emergency relief during critical times of crisis." }
+            ].map((service, index) => (
+              <div key={index} className="service-card p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:shadow-md transition-all duration-300 group">
+                <div className="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center mb-6 text-xl font-bold group-hover:scale-110 transition-transform">
+                  {index + 1}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 tracking-tight">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section id="contact" ref={ctaRef} className="py-24 px-6">
+        <div className="container mx-auto max-w-4xl text-center cta-content bg-gray-900 rounded-[2.5rem] p-12 md:p-20 text-white shadow-xl">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Ready to make an impact?</h2>
+          <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+            Your support can help us reach more people and change more lives. Every contribution makes a meaningful difference.
+          </p>
+          <button className="px-10 py-4 bg-white text-gray-900 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 active:scale-95">
+            Donate Today
+          </button>
+        </div>
+      </section>
+    </div>
+  );
+}
