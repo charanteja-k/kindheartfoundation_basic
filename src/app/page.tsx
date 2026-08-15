@@ -27,41 +27,50 @@ export default function Home() {
       });
 
       // About Section Scroll Animation
-      gsap.from(".about-content", {
-        scrollTrigger: {
-          trigger: aboutRef.current,
-          start: "top 80%",
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-      });
+      gsap.fromTo(".about-content", 
+        { y: 30, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: aboutRef.current,
+            start: "top 80%",
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+        }
+      );
 
       // Services Cards Stagger
-      gsap.from(".service-card", {
-        scrollTrigger: {
-          trigger: servicesRef.current,
-          start: "top 75%",
-        },
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power2.out",
-      });
+      gsap.fromTo(".service-card", 
+        { y: 40, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: servicesRef.current,
+            start: "top 75%",
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power2.out",
+        }
+      );
 
       // CTA Animation
-      gsap.from(".cta-content", {
-        scrollTrigger: {
-          trigger: ctaRef.current,
-          start: "top 85%",
-        },
-        scale: 0.95,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-      });
+      gsap.fromTo(".cta-content", 
+        { scale: 0.95, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: ctaRef.current,
+            start: "top 85%",
+          },
+          scale: 1,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+        }
+      );
     });
 
     return () => ctx.revert();
