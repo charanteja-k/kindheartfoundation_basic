@@ -87,7 +87,7 @@ export default function Home() {
       );
 
       // Utility function for text reveals on scroll
-      const setupReveal = (sectionRef: React.RefObject<HTMLDivElement>, selector: string) => {
+      const setupReveal = (sectionRef: React.RefObject<HTMLDivElement | null>, selector: string) => {
         gsap.fromTo(gsap.utils.toArray(selector), 
           { y: 40, opacity: 0 },
           {
