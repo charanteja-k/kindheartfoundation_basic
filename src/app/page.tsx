@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,8 +12,13 @@ export default function Home() {
   const aboutRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const [isDonateOpen, setIsDonateOpen] = useState(false);
 
   useEffect(() => {
+    // Global event listener for navbar
+    const handleOpenDonate = () => setIsDonateOpen(true);
+    window.addEventListener('openDonateModal', handleOpenDonate);
+
     // Context is great for cleanup in React
     const ctx = gsap.context(() => {
       // Hero Text Reveal
@@ -73,7 +78,10 @@ export default function Home() {
       );
     });
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      window.removeEventListener('openDonateModal', handleOpenDonate);
+    };
   }, []);
 
   return (
@@ -98,8 +106,11 @@ export default function Home() {
             The Kind Heart Foundation provides essential services, education, and care to communities in need. Join us in building a better future.
           </p>
           <div className="hero-text flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="px-8 py-4 bg-orange-600 text-white rounded-full font-medium hover:bg-orange-700 transition-all transform hover:-translate-y-1 w-full sm:w-auto shadow-lg shadow-orange-600/20">
-              Get Involved
+            <button 
+              onClick={() => setIsDonateOpen(true)}
+              className="px-8 py-4 bg-orange-600 text-white rounded-full font-medium hover:bg-orange-700 transition-all transform hover:-translate-y-1 w-full sm:w-auto shadow-lg shadow-orange-600/20"
+            >
+              Donate Now
             </button>
             <button className="px-8 py-4 bg-orange-50 text-orange-700 rounded-full font-medium hover:bg-orange-100 transition-all w-full sm:w-auto">
               Learn More
@@ -167,11 +178,44 @@ export default function Home() {
           <p className="text-orange-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
             Your support is the heartbeat of our foundation. Whether you volunteer your time or make a contribution, you are directly impacting lives in Indukurpet.
           </p>
-          <button className="px-10 py-4 bg-white text-orange-600 rounded-full font-semibold text-lg hover:bg-orange-50 transition-all transform hover:scale-105 active:scale-95 shadow-sm">
+          <button 
+            onClick={() => setIsDonateOpen(true)}
+            className="px-10 py-4 bg-white text-orange-600 rounded-full font-semibold text-lg hover:bg-orange-50 transition-all transform hover:scale-105 active:scale-95 shadow-sm"
+          >
             Donate Today
           </button>
         </div>
       </section>
+
+      {/* Donate Modal */}
+      {isDonateOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-black/80 backdrop-blur-md" onClick={() => setIsDonateOpen(false)}>
+          <div 
+            className="relative w-full h-full max-w-7xl flex flex-col bg-white rounded-3xl p-6 md:p-8 shadow-2xl animate-in fade-in zoom-in duration-300" 
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              onClick={() => setIsDonateOpen(false)}
+              className="absolute top-4 right-4 md:top-6 md:right-6 p-3 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-full transition-colors z-10 shadow-sm"
+              aria-label="Close modal"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div className="flex flex-col h-full text-center">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 flex-shrink-0 mt-2">Support Our Cause</h3>
+              <div className="relative flex-grow w-full rounded-2xl overflow-hidden mb-6 bg-gray-50 border border-gray-100">
+                <Image 
+                  src="/kindheartfoundation_donation_pic.jpg" 
+                  alt="Scan to Donate" 
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-gray-600 md:text-lg flex-shrink-0">Scan the QR code to make a donation and help us make a difference.</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

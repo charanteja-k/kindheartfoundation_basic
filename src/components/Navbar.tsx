@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -25,7 +27,10 @@ export default function Navbar() {
           <Link href="#services" className="hover:text-orange-600 transition-colors">Services</Link>
           <Link href="#contact" className="hover:text-orange-600 transition-colors">Contact</Link>
           
-          <button className="bg-orange-600 hover:bg-orange-700 text-white px-5 py-2.5 rounded-full transition-all transform hover:scale-105 active:scale-95 font-medium shadow-sm shadow-orange-600/20">
+          <button 
+            onClick={() => window.dispatchEvent(new Event('openDonateModal'))}
+            className="bg-orange-600 hover:bg-orange-700 text-white px-5 py-2.5 rounded-full transition-all transform hover:scale-105 active:scale-95 font-medium shadow-sm shadow-orange-600/20"
+          >
             Donate Now
           </button>
         </nav>
