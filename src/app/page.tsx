@@ -113,12 +113,12 @@ export default function Home() {
         <div className="container mx-auto max-w-5xl">
           <div className="about-content grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-6">About Us</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-6">Who We Are</h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Founded on the belief that every individual deserves a chance at a better life, the Kind Heart Foundation has been working tirelessly to support underprivileged communities.
+                Based in Indukurpet, the Kind Heart Foundation was established with a singular, unwavering mission: to extend a helping hand to those who need it most. We believe that compassion in action can transform entire communities.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed">
-                We focus on holistic development—providing not just immediate relief, but long-term solutions through education, healthcare, and skill development.
+                Whether it's ensuring access to quality education for underprivileged children, facilitating vital healthcare services, or simply being there during times of crisis, our dedicated volunteers work tirelessly to create sustainable, positive change from the ground up.
               </p>
             </div>
             <div className="aspect-square bg-orange-50 rounded-3xl flex items-center justify-center border border-orange-100 shadow-sm overflow-hidden p-8">
@@ -144,9 +144,9 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Education Programs", desc: "Providing access to quality education and learning materials for children in underserved areas." },
-              { title: "Healthcare Access", desc: "Organizing medical camps and providing essential healthcare services to communities." },
-              { title: "Community Support", desc: "Distributing food, clothing, and providing emergency relief during critical times of crisis." }
+              { title: "Education Initiatives", desc: "We provide school supplies, tutoring, and scholarships to ensure every child in Indukurpet has the opportunity to learn and thrive." },
+              { title: "Healthcare Access", desc: "Organizing free medical camps, health awareness drives, and providing critical support for families facing medical emergencies." },
+              { title: "Community Relief", desc: "From food distribution drives to disaster relief, we stand by our community providing immediate aid when crisis strikes." }
             ].map((service, index) => (
               <div key={index} className="service-card p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-lg hover:border-orange-100 transition-all duration-300 group">
                 <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-6 text-xl font-bold group-hover:bg-orange-600 group-hover:text-white transition-colors">
@@ -163,9 +163,9 @@ export default function Home() {
       {/* CTA Section */}
       <section id="contact" ref={ctaRef} className="py-24 px-6">
         <div className="container mx-auto max-w-4xl text-center cta-content bg-orange-600 rounded-[2.5rem] p-12 md:p-20 text-white shadow-xl shadow-orange-600/20">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Ready to make an impact?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Be a Part of Our Journey</h2>
           <p className="text-orange-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-            Your support can help us reach more people and change more lives. Every contribution makes a meaningful difference.
+            Your support is the heartbeat of our foundation. Whether you volunteer your time or make a contribution, you are directly impacting lives in Indukurpet.
           </p>
           <button className="px-10 py-4 bg-white text-orange-600 rounded-full font-semibold text-lg hover:bg-orange-50 transition-all transform hover:scale-105 active:scale-95 shadow-sm">
             Donate Today

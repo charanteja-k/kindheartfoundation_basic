@@ -19,7 +19,7 @@ export default function Footer() {
               </span>
           </div>
           <p className="max-w-xs leading-relaxed">
-            Providing essential services and care to people in need. Building a better, kinder future together.
+            Providing essential services and care to people in need in Indukurpet and beyond. Building a better, kinder future together.
           </p>
         </div>
 
@@ -33,12 +33,18 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="font-semibold text-gray-900 mb-4">Connect</h4>
-          <ul className="space-y-3">
-            <li><a href="#" className="hover:text-orange-600 transition-colors">Twitter / X</a></li>
-            <li><a href="#" className="hover:text-orange-600 transition-colors">Instagram</a></li>
-            <li><a href="#" className="hover:text-orange-600 transition-colors">Facebook</a></li>
-          </ul>
+          <h4 className="font-semibold text-gray-900 mb-4">Connect With Us</h4>
+          <div className="flex gap-4">
+            <a href="https://youtube.com/@kindheartfoundations?si=3dyPTNRL9nlGbe64" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-gray-100 rounded-full text-gray-600 hover:bg-orange-100 hover:text-orange-600 transition-all transform hover:scale-110" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/_kind_heart_foundation?igsh=MThhMm85cDc3YzExdg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-gray-100 rounded-full text-gray-600 hover:bg-orange-100 hover:text-orange-600 transition-all transform hover:scale-110" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16.11 7.66v.01"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/share/1DFB6qJdvg/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-gray-100 rounded-full text-gray-600 hover:bg-orange-100 hover:text-orange-600 transition-all transform hover:scale-110" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
