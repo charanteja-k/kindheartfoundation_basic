@@ -88,6 +88,15 @@ export default function Home() {
     window.addEventListener('openDonateModal', handleOpenDonate);
 
     const ctx = gsap.context(() => {
+      // Hero Background Slow Rotation (Globe effect)
+      gsap.to(".hero-bg-spin", {
+        rotationY: -360,
+        duration: 30,
+        repeat: -1,
+        ease: "linear",
+        transformOrigin: "center center"
+      });
+
       // Hero Text Reveal
       gsap.fromTo(".hero-reveal", 
         { y: 50, opacity: 0 },
@@ -119,6 +128,7 @@ export default function Home() {
         );
       };
 
+      // Set up scroll reveals
       setupReveal(aboutRef, ".about-reveal");
       setupReveal(servicesRef, ".service-card");
       setupReveal(servicesRef, ".services-header");
@@ -127,10 +137,7 @@ export default function Home() {
       setupReveal(ctaRef, ".cta-reveal");
     });
 
-    return () => {
-      ctx.revert();
-      window.removeEventListener('openDonateModal', handleOpenDonate);
-    };
+    return () => ctx.revert(); // Cleanup GSAP context
   }, []);
 
   return (
@@ -141,9 +148,11 @@ export default function Home() {
         className="relative min-h-[85vh] flex flex-col justify-center items-center text-center px-6 bg-white overflow-hidden"
       >
         <div 
-          className="absolute inset-0 z-0 opacity-10 bg-center bg-contain bg-no-repeat pointer-events-none" 
+          className="hero-bg-spin absolute inset-0 z-0 opacity-10 bg-center bg-contain bg-no-repeat pointer-events-none" 
           style={{ backgroundImage: "url('/hero-bg.png')" }}
         />
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/3 -z-10"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-yellow-50 rounded-full blur-3xl opacity-60 translate-y-1/3 -translate-x-1/3 -z-10"></div>
         
         <div className="relative z-10 max-w-4xl mx-auto mt-10">
           <div className="overflow-hidden mb-6">
