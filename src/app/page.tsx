@@ -199,14 +199,14 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="about-reveal aspect-square bg-orange-50 rounded-3xl flex items-center justify-center border border-orange-100 shadow-sm overflow-hidden p-8">
+            <div className="about-reveal aspect-square relative rounded-[2.5rem] overflow-hidden shadow-lg shadow-gray-200/50 group border border-gray-100">
               <Image 
                 src="/kindheartfoundation.jpg" 
                 alt="Kind Heart Foundation About" 
-                width={500} 
-                height={500} 
-                className="w-full h-full object-contain rounded-xl hover:scale-105 transition-transform duration-500"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 pointer-events-none"></div>
             </div>
           </div>
         </div>
