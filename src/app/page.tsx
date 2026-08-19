@@ -213,35 +213,97 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent Impact Section */}
+      {/* Recent Impact Section with Media */}
       <section ref={impactRef} className="py-24 bg-gray-50 px-6">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="bg-white rounded-[2.5rem] p-10 md:p-16 border border-gray-100 shadow-xl shadow-gray-200/40 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
-            <div className="relative z-10">
-              <div className="overflow-hidden mb-6">
-                <span className="impact-reveal inline-block px-4 py-1.5 bg-orange-100 text-orange-700 font-semibold text-sm rounded-full">Recent Highlight</span>
+            
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="overflow-hidden mb-6">
+                  <span className="impact-reveal inline-block px-4 py-1.5 bg-orange-100 text-orange-700 font-semibold text-sm rounded-full">Recent Highlight</span>
+                </div>
+                <div className="overflow-hidden mb-6">
+                  <h2 className="impact-reveal text-3xl md:text-5xl font-bold tracking-tight text-gray-900">Mega Medical Camp at Thali Cheru Gramam</h2>
+                </div>
+                <div className="overflow-hidden mb-6">
+                  <p className="impact-reveal text-gray-600 text-lg leading-relaxed">
+                    On August 9th, we hosted a highly successful mega medical camp. We are deeply grateful to <strong>Dr. Ramaiya from SR Hospital</strong> who personally attended to oversee the camp. 
+                  </p>
+                </div>
+                <div className="overflow-hidden">
+                  <p className="impact-reveal text-gray-600 text-lg leading-relaxed">
+                    Hundreds of community members received free, comprehensive care—including blood tests, sugar tests, cholesterol level checks, and scans. Full reports and necessary medicines were provided completely free of charge. This is the power of community in action.
+                  </p>
+                </div>
               </div>
-              <div className="overflow-hidden mb-6">
-                <h2 className="impact-reveal text-3xl md:text-5xl font-bold tracking-tight text-gray-900">Mega Medical Camp at Thali Cheru Gramam</h2>
-              </div>
-              <div className="overflow-hidden mb-6">
-                <p className="impact-reveal text-gray-600 text-lg md:text-xl leading-relaxed max-w-3xl">
-                  On August 9th, we hosted a highly successful mega medical camp. We are deeply grateful to <strong>Dr. Ramaiya from SR Hospital</strong> who personally attended to oversee the camp. 
-                </p>
-              </div>
-              <div className="overflow-hidden">
-                <p className="impact-reveal text-gray-600 text-lg leading-relaxed max-w-3xl">
-                  Hundreds of community members received free, comprehensive care—including blood tests, sugar tests, cholesterol level checks, and scans. Full reports and necessary medicines were provided completely free of charge. This is the power of community in action.
-                </p>
+
+              {/* Media Gallery / Placeholders */}
+              <div className="impact-reveal flex flex-col sm:flex-row gap-6">
+                {/* YouTube Video Placeholder */}
+                <div className="flex-1 w-full aspect-[4/5] sm:aspect-auto sm:h-80 rounded-2xl overflow-hidden bg-gray-900 shadow-lg relative group">
+                  <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/GXsVTKwGoy8" 
+                    title="YouTube video player" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen
+                    className="absolute inset-0"
+                  ></iframe>
+                </div>
+                
+                {/* Instagram Reel Placeholder */}
+                <a href="https://www.instagram.com/reels/DbcaFfozPqX/" target="_blank" rel="noopener noreferrer" className="flex-1 w-full aspect-[4/5] sm:aspect-auto sm:h-80 rounded-2xl overflow-hidden bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 shadow-lg relative flex items-center justify-center group hover:shadow-xl transition-all">
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                  <div className="relative z-10 flex flex-col items-center text-white text-center px-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16.11 7.66v.01"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
+                    <span className="font-semibold text-lg">Watch on Instagram Reels</span>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Contact Section Placeholder */}
+      <section id="contact" className="py-24 px-6 bg-white border-t border-gray-100">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-4">Get In Touch</h2>
+            <p className="text-gray-500 text-lg">Have questions or want to volunteer? Send us a message.</p>
+          </div>
+          <form className="bg-gray-50 p-8 md:p-12 rounded-3xl border border-gray-100 shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                <input type="text" disabled placeholder="e.g. Jane" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none opacity-70 cursor-not-allowed" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                <input type="text" disabled placeholder="e.g. Doe" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none opacity-70 cursor-not-allowed" />
+              </div>
+            </div>
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+              <input type="email" disabled placeholder="jane@example.com" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none opacity-70 cursor-not-allowed" />
+            </div>
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+              <textarea disabled rows={4} placeholder="How can we help?" className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:outline-none opacity-70 cursor-not-allowed resize-none"></textarea>
+            </div>
+            <button type="button" disabled className="w-full py-4 bg-orange-600 text-white rounded-xl font-medium opacity-70 cursor-not-allowed">
+              Send Message (Placeholder)
+            </button>
+          </form>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section id="contact" ref={ctaRef} className="py-24 px-6 bg-white">
+      <section ref={ctaRef} className="py-24 px-6 bg-gray-50">
         <div className="container mx-auto max-w-4xl text-center bg-orange-600 rounded-[2.5rem] p-12 md:p-20 text-white shadow-xl shadow-orange-600/20">
           <div className="overflow-hidden mb-6">
             <h2 className="cta-reveal text-3xl md:text-5xl font-bold tracking-tight">Be a Part of Our Journey</h2>
