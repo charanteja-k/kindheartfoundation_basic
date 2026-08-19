@@ -216,54 +216,58 @@ export default function Home() {
       {/* Recent Impact Section with Media */}
       <section ref={impactRef} className="py-24 bg-gray-50 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="bg-white rounded-[2.5rem] p-10 md:p-16 border border-gray-100 shadow-xl shadow-gray-200/40 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
-            
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Box 1: Recent Highlight Text */}
+            <div className="impact-reveal lg:col-span-3 bg-white rounded-[2.5rem] p-10 md:p-16 border border-gray-100 shadow-lg shadow-gray-200/40 relative overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+              <div className="relative z-10 max-w-4xl">
                 <div className="overflow-hidden mb-6">
-                  <span className="impact-reveal inline-block px-4 py-1.5 bg-orange-100 text-orange-700 font-semibold text-sm rounded-full">Recent Highlight</span>
+                  <span className="inline-block px-4 py-1.5 bg-orange-100 text-orange-700 font-semibold text-sm rounded-full">Recent Highlight</span>
                 </div>
                 <div className="overflow-hidden mb-6">
-                  <h2 className="impact-reveal text-3xl md:text-5xl font-bold tracking-tight text-gray-900">Mega Medical Camp at Thali Cheru Gramam</h2>
+                  <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900">Mega Medical Camp at Thali Cheru Gramam</h2>
                 </div>
                 <div className="overflow-hidden mb-6">
-                  <p className="impact-reveal text-gray-600 text-lg leading-relaxed">
+                  <p className="text-gray-600 text-lg leading-relaxed">
                     On August 9th, we hosted a highly successful mega medical camp. We are deeply grateful to <strong>Dr. Ramaiya from SR Hospital</strong> who personally attended to oversee the camp. 
                   </p>
                 </div>
                 <div className="overflow-hidden">
-                  <p className="impact-reveal text-gray-600 text-lg leading-relaxed">
+                  <p className="text-gray-600 text-lg leading-relaxed">
                     Hundreds of community members received free, comprehensive care—including blood tests, sugar tests, cholesterol level checks, and scans. Full reports and necessary medicines were provided completely free of charge. This is the power of community in action.
                   </p>
                 </div>
               </div>
+            </div>
 
-              {/* Media Gallery / Placeholders */}
-              <div className="impact-reveal flex flex-col sm:flex-row gap-6">
-                {/* YouTube Video Placeholder */}
-                <div className="flex-1 w-full aspect-[4/5] sm:aspect-auto sm:h-80 rounded-2xl overflow-hidden bg-gray-900 shadow-lg relative group">
-                  <iframe 
-                    width="100%" 
-                    height="100%" 
-                    src="https://www.youtube.com/embed/GXsVTKwGoy8" 
-                    title="YouTube video player" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen
-                    className="absolute inset-0"
-                  ></iframe>
-                </div>
-                
-                {/* Instagram Reel Placeholder */}
-                <a href="https://www.instagram.com/reels/DbcaFfozPqX/" target="_blank" rel="noopener noreferrer" className="flex-1 w-full aspect-[4/5] sm:aspect-auto sm:h-80 rounded-2xl overflow-hidden bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 shadow-lg relative flex items-center justify-center group hover:shadow-xl transition-all">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                  <div className="relative z-10 flex flex-col items-center text-white text-center px-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16.11 7.66v.01"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
-                    <span className="font-semibold text-lg">Watch on Instagram Reels</span>
-                  </div>
-                </a>
+            {/* Box 2: YouTube Video */}
+            <div className="impact-reveal lg:col-span-2 bg-white rounded-[2.5rem] p-4 sm:p-6 border border-gray-100 shadow-lg shadow-gray-200/40 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 flex flex-col">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 px-2">Watch Our Latest Work</h3>
+              <div className="w-full flex-grow aspect-video rounded-2xl overflow-hidden bg-gray-900 relative">
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube.com/embed/GXsVTKwGoy8" 
+                  title="YouTube video player" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                  className="absolute inset-0"
+                ></iframe>
               </div>
+            </div>
+
+            {/* Box 3: Instagram Reel */}
+            <div className="impact-reveal lg:col-span-1 bg-white rounded-[2.5rem] p-4 sm:p-6 border border-gray-100 shadow-lg shadow-gray-200/40 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 flex flex-col">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 px-2">Social Highlight</h3>
+              <a href="https://www.instagram.com/reels/DbcaFfozPqX/" target="_blank" rel="noopener noreferrer" className="w-full flex-grow min-h-[300px] rounded-2xl overflow-hidden relative flex items-center justify-center group">
+                <Image src="/insta-thumbnail.png" alt="Instagram Reel Thumbnail" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300"></div>
+                <div className="relative z-10 flex flex-col items-center text-white text-center px-4 transform group-hover:scale-110 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-3 drop-shadow-md"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16.11 7.66v.01"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
+                  <span className="font-semibold text-lg drop-shadow-md">Watch Reel</span>
+                </div>
+              </a>
             </div>
           </div>
         </div>
