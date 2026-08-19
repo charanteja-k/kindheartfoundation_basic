@@ -2,9 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function GalleryPage() {
-  // We'll generate an array of placeholders for now.
-  // Once the user provides actual images, we'll replace these.
-  const placeholders = Array.from({ length: 9 }).map((_, i) => i);
+  const images = [
+    "Image-24898.jpg",
+    "Image-25753.jpg",
+    "Image-3993.jpg",
+    "Image-42999.jpg",
+    "Image-49465.jpg",
+    "Image-55019.jpg",
+    "Image-57822.jpg",
+    "Image-69795.jpg",
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50 pt-32 pb-24 px-6">
@@ -16,16 +23,22 @@ export default function GalleryPage() {
           </p>
         </div>
 
-        {/* Masonry Grid Placeholder */}
+        {/* Masonry Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {placeholders.map((i) => (
+          {images.map((img, i) => (
             <div 
               key={i} 
-              className={`relative rounded-2xl overflow-hidden bg-gray-200 shadow-sm border border-gray-100 flex items-center justify-center text-gray-400
+              className={`relative rounded-2xl overflow-hidden shadow-sm border border-gray-100 group cursor-pointer
                 ${i % 4 === 0 ? "aspect-square" : i % 3 === 0 ? "aspect-video" : "aspect-[3/4]"}
               `}
             >
-              <span className="font-medium">Image {i + 1} Placeholder</span>
+              <Image 
+                src={`/gallery/${img}`} 
+                alt={`Gallery image ${i + 1}`} 
+                fill 
+                className="object-cover group-hover:scale-105 transition-transform duration-500" 
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
             </div>
           ))}
         </div>
