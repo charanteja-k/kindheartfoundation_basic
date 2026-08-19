@@ -204,6 +204,8 @@ export default function Home() {
                 src="/kindheartfoundation.jpg" 
                 alt="Kind Heart Foundation About" 
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 pointer-events-none"></div>
@@ -308,7 +310,13 @@ export default function Home() {
                     rel="noopener noreferrer" 
                     className={`absolute inset-0 transition-opacity duration-1000 ${activeReel === idx ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'} flex items-center justify-center group/reel`}
                   >
-                    <Image src={reel.image} alt={`Instagram Reel ${idx + 1}`} fill className="object-cover group-hover/reel:scale-105 transition-transform duration-700" />
+                    <Image 
+                      src={reel.image} 
+                      alt={`Instagram Reel ${idx + 1}`} 
+                      fill 
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                      className="object-cover group-hover/reel:scale-105 transition-transform duration-700" 
+                    />
                     <div className="absolute inset-0 bg-black/40 group-hover/reel:bg-black/30 transition-colors duration-300"></div>
                     <div className="relative z-10 flex flex-col items-center text-white text-center px-4 transform group-hover/reel:scale-110 transition-transform duration-300">
                       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-3 drop-shadow-md"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16.11 7.66v.01"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
