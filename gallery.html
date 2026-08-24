@@ -1,167 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Kind Heart Foundation</title>
-    <link href="./assets/css/output.css" rel="stylesheet">
-    
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    
-    <!-- Custom JS -->
-    <script src="./assets/js/main.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Kind Heart Foundation</title>
+  <link href="./assets/css/output.css" rel="stylesheet">
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Custom JS -->
+  <script src="./assets/js/main.js" defer></script>
 </head>
+
 <body class="antialiased bg-gray-50">
-    <!-- Navbar -->
-    <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/70 border-b border-gray-100 transition-all duration-300">
-      <div class="container mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-3 group">
-          <img src="./assets/images/kindheartfoundation.jpg" alt="Kind Heart Foundation Logo" class="w-10 h-10 rounded-lg object-cover group-hover:opacity-90 transition-opacity">
-          <span class="font-semibold text-lg tracking-tight text-gray-900">Kind Heart Foundation</span>
-        </a>
+  <!-- Navbar -->
+  <header
+    class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/70 border-b border-gray-100 transition-all duration-300">
+    <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="./assets/images/kindheartfoundation.jpg" alt="Kind Heart Foundation Logo"
+          class="w-10 h-10 rounded-lg object-cover group-hover:opacity-90 transition-opacity">
+        <span class="font-semibold text-lg tracking-tight text-gray-900">Kind Heart Foundation</span>
+      </a>
 
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-          <a href="index.html#about" class="hover:text-orange-600 transition-colors">About Us</a>
-          <a href="index.html#services" class="hover:text-orange-600 transition-colors">Services</a>
-          <a href="index.html#contact" class="hover:text-orange-600 transition-colors">Contact</a>
-          <button id="open-donate-nav" class="bg-orange-600 hover:bg-orange-700 text-white px-5 py-2.5 rounded-full transition-all transform hover:scale-105 active:scale-95 font-medium shadow-sm shadow-orange-600/20">
-            Donate Now
-          </button>
-        </nav>
-      </div>
-    </header>
-
-    <main class="flex flex-col w-full py-16 px-6 container mx-auto max-w-6xl min-h-screen">
-        <div class="text-center mb-16 overflow-hidden">
-            <h1 class="gallery-reveal text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">Our Gallery</h1>
-            <p class="gallery-reveal text-gray-500 max-w-2xl mx-auto text-lg">Glimpses of our community work, medical camps, and the smiles we create together.</p>
-        </div>
-
-        <!-- Masonry Grid -->
-        <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            <!-- Image 1 -->
-            <div class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
-                <img src="./assets/images/gallery/Image-24898.jpg" alt="Gallery Image" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
-                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
-            <!-- Image 2 -->
-            <div class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
-                <img src="./assets/images/gallery/Image-25753.jpg" alt="Gallery Image" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
-                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
-            <!-- Image 3 -->
-            <div class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
-                <img src="./assets/images/gallery/Image-3993.jpg" alt="Gallery Image" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
-                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
-            <!-- Image 4 -->
-            <div class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
-                <img src="./assets/images/gallery/Image-42999.jpg" alt="Gallery Image" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
-                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
-            <!-- Image 5 -->
-            <div class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
-                <img src="./assets/images/gallery/Image-49465.jpg" alt="Gallery Image" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
-                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
-            <!-- Image 6 -->
-            <div class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
-                <img src="./assets/images/gallery/Image-55019.jpg" alt="Gallery Image" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
-                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
-            <!-- Image 7 -->
-            <div class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
-                <img src="./assets/images/gallery/Image-57822.jpg" alt="Gallery Image" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
-                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
-            <!-- Image 8 -->
-            <div class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
-                <img src="./assets/images/gallery/Image-69795.jpg" alt="Gallery Image" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
-                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-100 py-12 md:py-20 mt-20">
-      <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm text-gray-500">
-        <div class="md:col-span-2">
-          <div class="flex items-center gap-3 mb-4">
-              <img src="./assets/images/kindheartfoundation.jpg" alt="Kind Heart Foundation Logo" class="w-8 h-8 rounded-md object-cover">
-              <span class="font-semibold text-gray-900 text-base">Kind Heart Foundation</span>
-          </div>
-          <p class="max-w-xs leading-relaxed">Providing essential services and care to people in need in Indukurpet and beyond. Building a better, kinder future together.</p>
-        </div>
-        <div>
-          <h4 class="font-semibold text-gray-900 mb-4">Quick Links</h4>
-          <ul class="space-y-3">
-            <li><a href="index.html#about" class="text-gray-600 hover:text-orange-600 transition-colors">About Us</a></li>
-            <li><a href="index.html#services" class="text-gray-600 hover:text-orange-600 transition-colors">Our Services</a></li>
-            <li><a href="gallery.html" class="text-gray-600 hover:text-orange-600 transition-colors">Gallery</a></li>
-            <li><a href="index.html#contact" class="text-gray-600 hover:text-orange-600 transition-colors">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold text-gray-900 mb-4">Connect With Us</h4>
-          <div class="flex gap-4">
-            <a href="https://youtube.com/@kindheartfoundations?si=3dyPTNRL9nlGbe64" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-gray-100 rounded-full text-gray-600 hover:bg-orange-100 hover:text-orange-600 transition-all transform hover:scale-110" aria-label="YouTube">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/_kind_heart_foundation?igsh=MThhMm85cDc3YzExdg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-gray-100 rounded-full text-gray-600 hover:bg-orange-100 hover:text-orange-600 transition-all transform hover:scale-110" aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16.11 7.66v.01"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
-            </a>
-            <a href="https://www.facebook.com/share/1DFB6qJdvg/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-gray-100 rounded-full text-gray-600 hover:bg-orange-100 hover:text-orange-600 transition-all transform hover:scale-110" aria-label="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="container mx-auto px-6 mt-12 pt-8 border-t border-gray-200 text-sm flex flex-col md:flex-row justify-between items-center text-gray-400">
-        <p>&copy; <span id="year"></span> Kind Heart Foundation. All rights reserved.</p>
-        <p class="mt-2 md:mt-0">Design with ❤️ by <a href='https://github.com/charanteja-k' target='_blank' class='hover:text-orange-600 transition-colors'>Charanteja K</a></p>
-      </div>
-    </footer>
-
-    <!-- Donate Modal -->
-    <div id="donate-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity">
-      <div id="donate-content" class="relative w-full h-full max-w-7xl flex flex-col bg-white rounded-3xl p-6 md:p-8 shadow-2xl opacity-0 transform scale-95 translate-y-10">
-        <button id="close-donate" class="absolute top-4 right-4 md:top-6 md:right-6 p-3 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-full transition-colors z-10 shadow-sm" aria-label="Close modal">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="index.html#about" class="hover:text-orange-600 transition-colors">About Us</a>
+        <a href="index.html#services" class="hover:text-orange-600 transition-colors">Services</a>
+        <a href="index.html#contact" class="hover:text-orange-600 transition-colors">Contact</a>
+        <button id="open-donate-nav"
+          class="bg-orange-600 hover:bg-orange-700 text-white px-5 py-2.5 rounded-full transition-all transform hover:scale-105 active:scale-95 font-medium shadow-sm shadow-orange-600/20">
+          Donate Now
         </button>
-        <div class="flex flex-col h-full text-center">
-          <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 flex-shrink-0 mt-2">Support Our Cause</h3>
-          <div class="relative flex-grow w-full rounded-2xl overflow-hidden mb-6 bg-gray-50 border border-gray-100 shadow-inner">
-            <img src="./assets/images/kindheartfoundation_donation_pic.jpg" alt="Scan to Donate" class="absolute inset-0 w-full h-full object-contain">
-          </div>
-          <p class="text-gray-600 md:text-lg flex-shrink-0 font-medium">Scan the QR code to make a donation and help us make a difference. Proofs of our work are always shared on social media.</p>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex flex-col w-full py-16 px-6 container mx-auto max-w-6xl min-h-screen">
+    <div class="text-center mb-16 overflow-hidden">
+      <h1 class="gallery-reveal text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">Our Gallery</h1>
+      <p class="gallery-reveal text-gray-500 max-w-2xl mx-auto text-lg">Glimpses of our community work, medical camps,
+        and the smiles we create together.</p>
+    </div>
+
+    <!-- Masonry Grid -->
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+      <!-- Image 1 -->
+      <div
+        class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
+        <img src="./assets/images/gallery/Image-24898.jpg" alt="Gallery Image"
+          class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+      </div>
+      <!-- Image 2 -->
+      <div
+        class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
+        <img src="./assets/images/gallery/Image-25753.jpg" alt="Gallery Image"
+          class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+      </div>
+      <!-- Image 3 -->
+      <div
+        class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
+        <img src="./assets/images/gallery/Image-3993.jpg" alt="Gallery Image"
+          class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+      </div>
+      <!-- Image 4 -->
+      <div
+        class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
+        <img src="./assets/images/gallery/Image-42999.jpg" alt="Gallery Image"
+          class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+      </div>
+      <!-- Image 5 -->
+      <div
+        class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
+        <img src="./assets/images/gallery/Image-49465.jpg" alt="Gallery Image"
+          class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+      </div>
+      <!-- Image 6 -->
+      <div
+        class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
+        <img src="./assets/images/gallery/Image-55019.jpg" alt="Gallery Image"
+          class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+      </div>
+      <!-- Image 7 -->
+      <div
+        class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
+        <img src="./assets/images/gallery/Image-57822.jpg" alt="Gallery Image"
+          class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+      </div>
+      <!-- Image 8 -->
+      <div
+        class="gallery-item break-inside-avoid rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group relative cursor-pointer border border-gray-100">
+        <img src="./assets/images/gallery/Image-69795.jpg" alt="Gallery Image"
+          class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-100 py-12 md:py-20 mt-20">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm text-gray-500">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="./assets/images/kindheartfoundation.jpg" alt="Kind Heart Foundation Logo"
+            class="w-8 h-8 rounded-md object-cover">
+          <span class="font-semibold text-gray-900 text-base">Kind Heart Foundation</span>
+        </div>
+        <p class="max-w-xs leading-relaxed">Providing essential services and care to people in need in Indukurpet and
+          beyond. Building a better, kinder future together.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-4">Quick Links</h4>
+        <ul class="space-y-3">
+          <li><a href="index.html#about" class="text-gray-600 hover:text-orange-600 transition-colors">About Us</a></li>
+          <li><a href="index.html#services" class="text-gray-600 hover:text-orange-600 transition-colors">Our
+              Services</a></li>
+          <li><a href="gallery.html" class="text-gray-600 hover:text-orange-600 transition-colors">Gallery</a></li>
+          <li><a href="index.html#contact" class="text-gray-600 hover:text-orange-600 transition-colors">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-4">Connect With Us</h4>
+        <div class="flex gap-4">
+          <a href="https://youtube.com/@kindheartfoundations?si=3dyPTNRL9nlGbe64" target="_blank"
+            rel="noopener noreferrer"
+            class="p-2.5 bg-gray-100 rounded-full text-gray-600 hover:bg-orange-100 hover:text-orange-600 transition-all transform hover:scale-110"
+            aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+              <path d="m10 15 5-3-5-3z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/_kind_heart_foundation?igsh=MThhMm85cDc3YzExdg%3D%3D&utm_source=qr"
+            target="_blank" rel="noopener noreferrer"
+            class="p-2.5 bg-gray-100 rounded-full text-gray-600 hover:bg-orange-100 hover:text-orange-600 transition-all transform hover:scale-110"
+            aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16.11 7.66v.01" />
+              <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/share/1DFB6qJdvg/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"
+            class="p-2.5 bg-gray-100 rounded-full text-gray-600 hover:bg-orange-100 hover:text-orange-600 transition-all transform hover:scale-110"
+            aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
         </div>
       </div>
     </div>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            gsap.registerPlugin(ScrollTrigger);
-            
-            // Header reveal
-            gsap.fromTo(".gallery-reveal", 
-                { y: 30, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power3.out" }
-            );
+    <div
+      class="container mx-auto px-6 mt-12 pt-8 border-t border-gray-200 text-sm flex flex-col md:flex-row justify-between items-center text-gray-400">
+      <p>&copy; <span id="year"></span> Kind Heart Foundation. All rights reserved.</p>
 
-            // Staggered grid reveal
-            gsap.fromTo(".gallery-item", 
-                { y: 50, opacity: 0 },
-                { 
-                    y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: ".columns-1",
-                        start: "top 85%"
-                    }
-                }
-            );
-        });
-    </script>
+    </div>
+  </footer>
+
+  <!-- Donate Modal -->
+  <div id="donate-modal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity">
+    <div id="donate-content"
+      class="relative w-full h-full max-w-7xl flex flex-col bg-white rounded-3xl p-6 md:p-8 shadow-2xl opacity-0 transform scale-95 translate-y-10">
+      <button id="close-donate"
+        class="absolute top-4 right-4 md:top-6 md:right-6 p-3 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-full transition-colors z-10 shadow-sm"
+        aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <div class="flex flex-col h-full text-center">
+        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 flex-shrink-0 mt-2">Support Our Cause</h3>
+        <div
+          class="relative flex-grow w-full rounded-2xl overflow-hidden mb-6 bg-gray-50 border border-gray-100 shadow-inner">
+          <img src="./assets/images/kindheartfoundation_donation_pic.jpg" alt="Scan to Donate"
+            class="absolute inset-0 w-full h-full object-contain">
+        </div>
+        <p class="text-gray-600 md:text-lg flex-shrink-0 font-medium">Scan the QR code to make a donation and help us
+          make a difference. Proofs of our work are always shared on social media.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Header reveal
+      gsap.fromTo(".gallery-reveal",
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power3.out" }
+      );
+
+      // Staggered grid reveal
+      gsap.fromTo(".gallery-item",
+        { y: 50, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".columns-1",
+            start: "top 85%"
+          }
+        }
+      );
+    });
+  </script>
 </body>
+
 </html>
