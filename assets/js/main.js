@@ -5,6 +5,26 @@ document.addEventListener("DOMContentLoaded", () => {
     // GSAP Setup
     gsap.registerPlugin(ScrollTrigger);
 
+    // Navbar Shrink Effect
+    const mainNav = document.getElementById("main-nav");
+    const navContainer = document.getElementById("nav-container");
+    
+    if (mainNav && navContainer) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                mainNav.classList.remove("w-full", "top-0", "border-b", "border-gray-100", "bg-white/70");
+                mainNav.classList.add("w-[95%]", "max-w-5xl", "top-4", "rounded-full", "border", "border-gray-200", "bg-white/90", "shadow-lg");
+                navContainer.classList.remove("h-20");
+                navContainer.classList.add("h-16");
+            } else {
+                mainNav.classList.add("w-full", "top-0", "border-b", "border-gray-100", "bg-white/70");
+                mainNav.classList.remove("w-[95%]", "max-w-5xl", "top-4", "rounded-full", "border", "border-gray-200", "bg-white/90", "shadow-lg");
+                navContainer.classList.add("h-20");
+                navContainer.classList.remove("h-16");
+            }
+        });
+    }
+
     // Hero Background Slow Rotation
     gsap.to(".hero-bg-spin", {
         rotationY: -360,
