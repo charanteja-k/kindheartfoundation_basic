@@ -29,11 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Utility function for text reveals on scroll
     const setupReveal = (sectionId, selector) => {
+        const triggerEl = document.querySelector(sectionId);
+        if (!triggerEl) return;
+        
         gsap.fromTo(gsap.utils.toArray(selector), 
             { y: 40, opacity: 0 },
             {
                 scrollTrigger: {
-                    trigger: sectionId,
+                    trigger: triggerEl,
                     start: "top 80%",
                 },
                 y: 0,
